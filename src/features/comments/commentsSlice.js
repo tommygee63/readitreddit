@@ -1,10 +1,19 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchComments = createAsyncThunk('comments/fetchComments', async (subreddit, id) => {
-    const response = await  fetch(`https://www.reddit.com/r/${subreddit}/comments/${id}.json`);
-    const jsonResponse = await response.json();
-    return jsonResponse.data.children
-})
+export const fetchComments = createAsyncThunk('comments/fetchComments', async (permalink) => {
+
+    try{
+        const response = await  fetch(`https://www.reddit.com` + permalink + '.json');
+
+        if(response.ok){
+            const jsonResponse = await response.json();
+            console.log(jsonResponse[1].data.children);
+            return jsonResponse[1].data.children
+        }
+    } catch(error) {
+        console.log(error)
+    }
+});
 
 const commentsSlice = createSlice({
     name: 'comments',
@@ -16,7 +25,7 @@ const commentsSlice = createSlice({
     reducers: {
 
     },
-    exrtaReducers: (builder) => {
+    extraReducers: (builder) => {
         builder
             .addCase(fetchComments.pending, (state) => {
                 state.isLoading = true;
@@ -38,4 +47,4 @@ export const commentsSelector = (state) => {
     return state.comments.comments;
 };
 
-export default comments.reducer;
+export default commentsSlice.reducer;
