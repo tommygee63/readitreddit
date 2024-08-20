@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.css';
-import Popular from './features/popular/Popular.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <Popular />
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={Root} ></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

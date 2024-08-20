@@ -18,16 +18,16 @@ const postsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchPopularData.pending, (state) => {
+            .addCase(fetchPostsData.pending, (state) => {
                 state.isPending = true;
                 state.isRejected = false;
             })
-            .addCase(fetchPopularData.fulfilled, (state, action) => {
+            .addCase(fetchPostsData.fulfilled, (state, action) => {
                 state.isPending = false;
                 state.isRejected = false;
                 state.popularPosts = action.payload;
             })
-            .addCase(fetchPopularData.rejected, (state) => {
+            .addCase(fetchPostsData.rejected, (state) => {
                 state.isPending = false;
                 state.isRejected = true;
             })
