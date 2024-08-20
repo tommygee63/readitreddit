@@ -1,9 +1,11 @@
 import  { React, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { fetchPostsData } from '../app/postsSlice';
 
 export function Searchbar() {
 
-    const [searchTerm, setSearchTerm] = useState();
+    const [searchTerm, setSearchTerm] = useState('');
+    const dispatch = useDispatch();
 
     function handleChange(e) {
         setSearchTerm(e.target.value);
@@ -11,7 +13,8 @@ export function Searchbar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetchPostsData(searchTerm);
+        dispatch(fetchPostsData(searchTerm));
+        setSearchTerm('')
     };
 
     return (

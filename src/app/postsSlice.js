@@ -1,15 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {fetchPosts} from '../api/reddit.js';
 
-export const fetchPostsData = createAsyncThunk('popular/fetchPopularData', async(subreddit) => {
+export const fetchPostsData = createAsyncThunk('posts/fetchPostsData', async(subreddit) => {
 
-    fetchPosts(subreddit);
+    return await fetchPosts(subreddit);
 });
 
 const postsSlice = createSlice({
-    name: 'popular',
+    name: 'posts',
     initialState: {
-        popularPosts: [],
+        posts: [],
         isPending: false,
         isRejected: false
     },
@@ -25,7 +25,7 @@ const postsSlice = createSlice({
             .addCase(fetchPostsData.fulfilled, (state, action) => {
                 state.isPending = false;
                 state.isRejected = false;
-                state.popularPosts = action.payload;
+                state.posts = action.payload;
             })
             .addCase(fetchPostsData.rejected, (state) => {
                 state.isPending = false;
@@ -35,7 +35,7 @@ const postsSlice = createSlice({
 });
 
 export const postsSelector = (state) => {
-    return state.popular.popularPosts;
+    return state.posts.posts;
 };
 
 export default postsSlice.reducer;
