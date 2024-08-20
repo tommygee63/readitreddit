@@ -1,18 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {fetchComments} from '../api/reddit.js';
 
 export const fetchComments = createAsyncThunk('comments/fetchComments', async (permalink) => {
 
-    try{
-        const response = await  fetch(`https://www.reddit.com` + permalink + '.json');
-
-        if(response.ok){
-            const jsonResponse = await response.json();
-            console.log(jsonResponse[1].data.children);
-            return jsonResponse[1].data.children
-        }
-    } catch(error) {
-        console.log(error)
-    }
+    fetchComments(permalink);
 });
 
 const commentsSlice = createSlice({

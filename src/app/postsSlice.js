@@ -1,16 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {fetchPosts} from '../api/reddit.js';
 
-export const fetchPopularData = createAsyncThunk('popular/fetchPopularData', async() => {
-    
-    try{
-        const response = await fetch('https://www.reddit.com/r/popular.json');
-        if(response.ok) {
-            const jsonResponse = await response.json();  
-            return jsonResponse.data.children;
-        }
-    }catch(error) {
-        console.log(error);
-    }
+export const fetchPostsData = createAsyncThunk('popular/fetchPopularData', async(subreddit) => {
+
+    fetchPosts(subreddit);
 });
 
 const popularSlice = createSlice({
