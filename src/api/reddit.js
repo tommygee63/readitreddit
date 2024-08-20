@@ -24,3 +24,16 @@ export async function fetchComments(permalink) {
         console.log(error)
     }
 };
+
+export async function fetchSubreddits() {
+    try {
+        const response = await fetch('https://www.reddit.com/subreddits.json');
+        if(response.ok) {
+            const jsonResponse = await response.json();
+            console.log(jsonResponse.data.children);
+            return jsonResponse;
+        }
+    } catch (error) {
+        console.log(error);
+    };
+};

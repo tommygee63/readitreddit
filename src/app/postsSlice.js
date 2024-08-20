@@ -6,7 +6,7 @@ export const fetchPostsData = createAsyncThunk('popular/fetchPopularData', async
     fetchPosts(subreddit);
 });
 
-const popularSlice = createSlice({
+const postsSlice = createSlice({
     name: 'popular',
     initialState: {
         popularPosts: [],
@@ -34,8 +34,8 @@ const popularSlice = createSlice({
     }
 });
 
-export const popularSelector = (state) => {
+export const postsSelector = (state) => {
     return state.popular.popularPosts;
 };
 
-export default popularSlice.reducer;
+export default postsSlice.reducer;

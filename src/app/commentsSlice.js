@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {fetchComments} from '../api/reddit.js';
 
-export const fetchComments = createAsyncThunk('comments/fetchComments', async (permalink) => {
+export const fetchCommentsData = createAsyncThunk('comments/fetchComments', async (permalink) => {
 
     fetchComments(permalink);
 });
@@ -18,16 +18,16 @@ const commentsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchComments.pending, (state) => {
+            .addCase(fetchCommentsData.pending, (state) => {
                 state.isLoading = true;
                 state.isRejected = false;
             })
-            .addCase(fetchComments.fulfilled, (state, action) => {
+            .addCase(fetchCommentsData.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isRejected = false;
                 state.comments = action.payload;
             })
-            .addCase(fetchComments.rejected, (state) => {
+            .addCase(fetchCommentsData.rejected, (state) => {
                 state.isLoading = false;
                 state.isRejected = true;
             })
