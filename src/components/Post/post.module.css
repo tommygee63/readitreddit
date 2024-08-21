@@ -1,0 +1,14 @@
+.postTile {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    /*border: 0.5px solid gray;*/
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    padding: 5px 10px
+}
