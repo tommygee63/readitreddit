@@ -1,6 +1,6 @@
 import {React} from 'react';
-import { Header } from '../features/Header.js/Header';
-import { Subreddits } from '../features/Subreddits.js/Subreddits';
+import { Header } from '../features/Header/Header.js';
+import { Subreddits } from '../features/Subreddits/Subreddits.js';
 
 export function Root() {
     return(

@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { subredditsSelector, fetchSubredditsData } from '../../app/subredditsSlice';
+import { subredditsSelector, fetchSubredditsData } from '../../app/subredditsSlice.js';
 import { SubredditTile } from '../../components/subreddits/SubredditTile.js';
 import styles from './subreddits.module.css';
 
