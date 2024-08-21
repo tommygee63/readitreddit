@@ -1,6 +1,7 @@
 import  { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchPostsData } from '../app/postsSlice';
+import { fetchPostsData } from '../../app/postsSlice';
+import styles from './searchbar.module.css';
 
 export function Searchbar() {
 
@@ -18,16 +19,15 @@ export function Searchbar() {
     };
 
     return (
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} className={styles.form} >
             <input 
+            className={styles.input}
             type='text' 
             placeholder='search...' 
             value={searchTerm}
             onChange={handleChange} />
         
-            <input 
-            type='submit' 
-            value='Search' />
+            <button type='submit' className={styles.submit} ><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     )
 };

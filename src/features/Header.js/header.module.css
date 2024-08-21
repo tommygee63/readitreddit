@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 5px 5px #f2f2f2;
+}
+
+.bigDiv {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.littleDiv {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title {
+    color: blue;
+    padding-left: 1rem;
+}
+.titlespan {
+    color: red;
+}

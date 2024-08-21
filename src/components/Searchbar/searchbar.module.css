@@ -1,0 +1,17 @@
+.form {
+    width: 100%;
+}
+
+.input {
+    width: 70%;
+    height: 2rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit {
+    height: 2rem;
+    width: 2rem;
+    border: 1.6px solid black;
+    border-radius: 5px;
+}
