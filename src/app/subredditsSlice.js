@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchSubreddits } from '../api/reddit.js';
 
-export const fetchSubredditsData = createAsyncThunk('subreddits/fetchSubredditData', async() => {
-    fetchSubreddits();
+export const fetchSubredditsData = createAsyncThunk('subreddits/fetchSubredditsData', async() => {
+    return await fetchSubreddits();
 })
 
 const subreddits = createSlice({
@@ -33,8 +33,8 @@ const subreddits = createSlice({
     }
 });
 
-export const redditsSelector = (state) => {
-    return state.reddits.reddits;
+export const subredditsSelector = (state) => {
+    return state.subreddits.subreddits;
 }
 
 export default subreddits.reducer;
