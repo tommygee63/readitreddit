@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { subredditsSelector, fetchSubredditsData } from '../../app/subredditsSlice';
 import { SubredditTile } from '../../components/subreddits/SubredditTile.js';
+import styles from './subreddits.module.css';
 
 export function Subreddits() {
 
@@ -14,7 +15,7 @@ export function Subreddits() {
     const subreddits = useSelector(subredditsSelector);
 
     return (
-        <div>
+        <div className={styles.subreddits} >
             {subreddits.map((subreddit) => {
                 return <SubredditTile  subreddit={subreddit} />
             })}

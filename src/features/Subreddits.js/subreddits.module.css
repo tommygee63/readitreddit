@@ -1,0 +1,8 @@
+.subreddits {
+    width: 15%;
+    padding: 0.5rem;
+    box-shadow: 5px 5px gray;
+    margin-top: 0.5rem;
+    background-color: white;
+    border-radius: 5px;
+}
