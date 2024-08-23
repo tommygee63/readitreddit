@@ -8,7 +8,7 @@ export function Post({post}) {
             {post.data.url.includes('.jpeg') ? <img src={post.data.url} alt='' className={styles.img} ></img> : <img src={post.data.thumbnail} alt='' ></img>}
             <div className={styles.container} ><p className={styles.description} >{post.data.selftext}</p></div>
             <div className={styles.postFooter} >
-                <div><p>{post.data.author}</p></div>
+                <div><p><strong>{post.data.author}</strong></p></div>
                 <button><i class="fa-regular fa-comment"></i>{post.data.num_comments}</button>
             </div>
         </div>

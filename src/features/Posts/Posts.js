@@ -10,7 +10,7 @@ export function Posts() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchPostsData('home'))
+        dispatch(fetchPostsData('r/home'))
     }, [])
 
     return (

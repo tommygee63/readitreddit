@@ -1,6 +1,6 @@
 export async function fetchPosts(subreddit) {
     try{
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
+        const response = await fetch(`https://www.reddit.com/${subreddit}.json`);
         if(response.ok) {
             const jsonResponse = await response.json();  
             console.log(jsonResponse.data.children);
