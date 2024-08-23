@@ -14,7 +14,7 @@ export function Searchbar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(fetchPostsData(searchTerm));
+        dispatch(fetchPostsData(`r/${searchTerm}`));
         setSearchTerm('')
     };
 

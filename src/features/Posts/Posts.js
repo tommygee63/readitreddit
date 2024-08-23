@@ -13,6 +13,15 @@ export function Posts() {
         dispatch(fetchPostsData('r/home'))
     }, [])
 
+    if (!postsData) {
+        return (
+            <div className={styles.postsDiv} >
+            <h2>Sorry, unable to fetch posts...</h2>
+            <p>Check your spelling or try another search.</p>
+            </div>
+        )
+    }
+
     return (
         <div className={styles.postsDiv} >{postsData.map((post) => {
             return <Post post={post} key={post.data.id} />
