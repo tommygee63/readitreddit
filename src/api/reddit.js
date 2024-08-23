@@ -3,7 +3,7 @@ export async function fetchPosts(subreddit) {
         const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
         if(response.ok) {
             const jsonResponse = await response.json();  
-            console.log(jsonResponse)
+            console.log(jsonResponse.data.children);
             return jsonResponse.data.children;
         }
     }catch(error) {
