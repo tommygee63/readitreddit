@@ -9,7 +9,7 @@ export function Post({post}) {
             <div className={styles.container} ><p className={styles.description} >{post.data.selftext}</p></div>
             <div className={styles.postFooter} >
                 <div><p><strong>{post.data.author}</strong></p></div>
-                <button><i class="fa-regular fa-comment"></i>{post.data.num_comments}</button>
+                <button className={styles.button} ><i class="fa-regular fa-comment fa-xl"></i><p className={styles.comment_counter} >{post.data.num_comments}</p></button>
             </div>
         </div>
     )
