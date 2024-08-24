@@ -7,7 +7,7 @@ import styles from './post.module.css';
 export function Post({post}) {
 
     const dispatch = useDispatch()
-    const [hideComments, setHideComments] = useState(false)
+    const [hideComments, setHideComments] = useState(true)
 
     function handleClick(e) {
         if (post.data.num_comments === 0) {
