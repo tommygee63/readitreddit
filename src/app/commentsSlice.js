@@ -14,7 +14,9 @@ const commentsSlice = createSlice({
         isRejected: false
     },
     reducers: {
-
+        toggleIsShowing(state) {
+            state.isShowing = !state.isShowing;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -37,5 +39,8 @@ const commentsSlice = createSlice({
 export const commentsSelector = (state) => {
     return state.comments.comments;
 };
+export const isShowingSelector = (state) => {
+    return state.comments.isShowing;
+}
 
 export default commentsSlice.reducer;

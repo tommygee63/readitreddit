@@ -9,6 +9,9 @@ export function Post({post}) {
     const dispatch = useDispatch()
 
     function handleClick(e) {
+        if (post.data.num_comments === 0) {
+            return null;
+        }
         dispatch(fetchCommentsData(post.data.permalink));
     };
 
@@ -20,8 +23,8 @@ export function Post({post}) {
             <div className={styles.postFooter} >
                 <div><p><strong>{post.data.author}</strong></p></div>
                 <button className={styles.button} onClick={handleClick} ><i class="fa-regular fa-comment fa-xl"></i><p className={styles.comment_counter} >{post.data.num_comments}</p></button>
-                <Comments post={post} />
             </div>
+            <Comments post={post} />
         </div>
     )
 };

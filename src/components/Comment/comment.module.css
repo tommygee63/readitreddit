@@ -1,0 +1,11 @@
+.comment_body {
+    box-shadow: 0 0 5px gray;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.comment_text {
+    padding: 5px;
+}

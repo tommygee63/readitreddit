@@ -1,8 +1,8 @@
-import {React} from 'react';
+import { React, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { commentsSelector } from '../../app/commentsSlice';
 import { Comment } from '../../components/Comment/Comment';
-
+import styles from './comments.module.css'
 
 export function Comments({post}) {
 
@@ -10,17 +10,16 @@ export function Comments({post}) {
     const commentsId = `${post.kind}_` + post.data.id;
     const commentsToRender = comments[commentsId]
 
-    if (!Object.keys(comments).includes(commentsId)) {
+    if (!commentsToRender) {
         return null
     }
 
     return(
-        <div>
+        <div className={styles.comments_container} >
             {commentsToRender.map((comment) => {
-                return <Comment comment={comment} />
+                return <Comment key={comment.data.id} comment={comment} />
         })}
         </div>
-
     )
 
 }
