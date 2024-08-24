@@ -1,3 +1,16 @@
 .comments_container {
     padding-bottom: 10px;
 }
+
+.button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover {
+    box-shadow: 0 0 2px gray;
+    cursor: pointer;
+}
+.button:active {
+    box-shadow: -2px -2px gray;
+}
