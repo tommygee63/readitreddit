@@ -18,7 +18,7 @@ export async function fetchComments(permalink) {
 
         if(response.ok){
             const jsonResponse = await response.json();
-            //console.log(jsonResponse[1].data.children);
+            console.log(jsonResponse[1].data.children);
             return jsonResponse[1].data.children
         }
     } catch(error) {

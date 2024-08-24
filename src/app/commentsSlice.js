@@ -3,13 +3,13 @@ import {fetchComments} from '../api/reddit.js';
 
 export const fetchCommentsData = createAsyncThunk('comments/fetchComments', async (permalink) => {
 
-    fetchComments(permalink);
+    return fetchComments(permalink);
 });
 
 const commentsSlice = createSlice({
     name: 'comments',
     initialState: {
-        comments: [],
+        comments: {},
         isLoading: false,
         isRejected: false
     },
@@ -25,7 +25,7 @@ const commentsSlice = createSlice({
             .addCase(fetchCommentsData.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isRejected = false;
-                state.comments = action.payload;
+                state.comments[action.payload[0].data.parent_id] = action.payload;
             })
             .addCase(fetchCommentsData.rejected, (state) => {
                 state.isLoading = false;
