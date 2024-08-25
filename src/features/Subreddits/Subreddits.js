@@ -10,7 +10,7 @@ export function Subreddits() {
 
     useEffect(() => {
         dispatch(fetchSubredditsData())
-    }, []);
+    }, [dispatch]);
 
     const subreddits = useSelector(subredditsSelector);
 
