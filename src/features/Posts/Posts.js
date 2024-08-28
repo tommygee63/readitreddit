@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPostsData, postsSelector } from '../../app/postsSlice';
 import { Post } from '../../components/Post/Post.js';
+import { Loading } from '../../components/Loading/Loading.js';
 import styles from './posts.module.css';
 
 export function Posts() {
@@ -13,7 +14,7 @@ export function Posts() {
         dispatch(fetchPostsData('r/home'))
     }, [dispatch])
 
-    if (!postsData) {
+    if (!postsData.posts) {
         return (
             <div className={styles.postsDiv} >
             <h2>Sorry, unable to fetch posts...</h2>
@@ -22,8 +23,19 @@ export function Posts() {
         )
     }
 
+    if (postsData.posts.isPending) {
+        return (
+            <div classname={styles.postsDiv}>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+            </div>
+        )
+    }
+
     return (
-        <div className={styles.postsDiv} >{postsData.map((post) => {
+        <div className={styles.postsDiv} >{postsData.posts.map((post) => {
             return <Post post={post} key={post.data.id} />
         })}</div>
     )

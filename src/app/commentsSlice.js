@@ -37,10 +37,7 @@ const commentsSlice = createSlice({
 });
 
 export const commentsSelector = (state) => {
-    return state.comments.comments;
+    return state.comments;
 };
-export const isShowingSelector = (state) => {
-    return state.comments.isShowing;
-}
 
 export default commentsSlice.reducer;

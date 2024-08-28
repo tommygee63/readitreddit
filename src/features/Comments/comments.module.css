@@ -14,3 +14,14 @@
 .button:active {
     box-shadow: -2px -2px gray;
 }
+
+.loading {
+    width: 90%;
+    box-shadow: 0 0 5px gray;
+    margin: 10px auto;
+    border-radius: 5px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
