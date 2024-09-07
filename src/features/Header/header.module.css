@@ -13,7 +13,13 @@
     align-items: center;
 }
 
-.littleDiv {
+.littleDivTitle {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.littleDivEmpty {
     width: 25%;
     display: flex;
     justify-content: flex-start;
@@ -26,4 +32,18 @@
 }
 .titlespan {
     color: red;
+}
+
+@media only screen and (max-width: 800px) {
+    .littleDivEmpty {
+        display: none;
+    }
+
+    .bigDiv {
+        justify-content: flex-end;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
 }

@@ -18,3 +18,9 @@
     background-color: #f2f2f2;
     box-shadow: 0 0 2px gray;
 }
+
+@media only screen and (max-width: 800px) {
+    .tile {
+        justify-content: center;
+    }
+}

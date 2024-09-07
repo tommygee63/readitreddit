@@ -5,10 +5,10 @@ import { Posts } from '../features/Posts/Posts.js';
 
 export function Root() {
     return(
-        <>
-            <header><Header /></header>
-            <aside><Subreddits /></aside>
+        <div>
+            <Header />
             <main><Posts /></main>
-        </>
+            <aside><Subreddits /></aside>
+        </div>
     )
 };
