@@ -9,3 +9,9 @@
 .comment_text {
     padding: 0 10px 5px 10px;
 }
+
+@media only screen and (max-width: 800px) {
+    .comment_body {
+        overflow: hidden;
+    }
+}

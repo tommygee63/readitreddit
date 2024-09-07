@@ -62,4 +62,7 @@
         max-height: 200px;
         max-width: 300px;
     }
+    .container {
+        overflow: hidden;
+    }
 }
