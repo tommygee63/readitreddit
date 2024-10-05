@@ -23,12 +23,6 @@ export function Posts() {
         )
     }
 
-   /* if (postsData.posts.isPending) {
-        return (
-            
-        )
-    }*/
-
     return (
         <>
         {postsData.isPending ? <div className={styles.postsDiv}>
