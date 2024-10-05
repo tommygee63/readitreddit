@@ -16,7 +16,7 @@ export function Searchbar() {
         e.preventDefault();
         const searchTermSplit = searchTerm.split(' ')
         const termToSearch = searchTermSplit.join('')
-        dispatch(fetchPostsData(`r/${termToSearch}`));
+        dispatch(fetchPostsData(`/r/${termToSearch}`));
         setSearchTerm('')
     };
 

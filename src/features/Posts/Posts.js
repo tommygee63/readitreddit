@@ -11,7 +11,7 @@ export function Posts() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchPostsData('r/home'))
+        dispatch(fetchPostsData('/r/home'))
     }, [dispatch])
 
     if (!postsData.posts) {
