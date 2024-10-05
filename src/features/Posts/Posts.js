@@ -23,20 +23,22 @@ export function Posts() {
         )
     }
 
-    if (postsData.posts.isPending) {
+   /* if (postsData.posts.isPending) {
         return (
-            <div classname={styles.postsDiv}>
-                <div className={styles.loading} ><Loading /></div>
-                <div className={styles.loading} ><Loading /></div>
-                <div className={styles.loading} ><Loading /></div>
-                <div className={styles.loading} ><Loading /></div>
-            </div>
+            
         )
-    }
+    }*/
 
     return (
-        <div className={styles.postsDiv} >{postsData.posts.map((post) => {
+        <>
+        {postsData.isPending ? <div className={styles.postsDiv}>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+                <div className={styles.loading} ><Loading /></div>
+            </div>  : <div className={styles.postsDiv} >{postsData.posts.map((post) => {
             return <Post post={post} key={post.data.id} />
-        })}</div>
+        })}</div>}
+        </>
     )
 };

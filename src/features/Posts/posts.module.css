@@ -6,11 +6,11 @@
 }
 
 .loading {
-    width: 90%;
+    width: 100%;
     box-shadow: 0 0 5px gray;
     margin: 10px auto;
     border-radius: 5px;
-    height: 100px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
