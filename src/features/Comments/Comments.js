@@ -12,31 +12,37 @@ export function Comments({post, setHideComments}) {
     const commentsToRender = comments.comments[commentsId]
 
     if (!commentsToRender) {
-        return null
-    }
-
-    if (comments.isLoading) {
-        return(
+        return (
             <div className={styles.comments_container}>
+            <button onClick={handleClick} className={styles.button} disabled >Close Comments</button>
             <div className={styles.loading} ><Loading /></div>
             <div className={styles.loading} ><Loading /></div>
             <div className={styles.loading} ><Loading /></div>
             <div className={styles.loading} ><Loading /></div>
         </div>
         )
-    }
+    };
 
     function handleClick() {
         setHideComments(true)
     }
 
     return(
-        <div className={styles.comments_container} >
+        <>
+        {comments.isLoading ? <div className={styles.comments_container}>
+            <button onClick={handleClick} className={styles.button} disabled >Close Comments</button>
+            <div className={styles.loading} ><Loading /></div>
+            <div className={styles.loading} ><Loading /></div>
+            <div className={styles.loading} ><Loading /></div>
+            <div className={styles.loading} ><Loading /></div>
+        </div> : <div className={styles.comments_container} >
             <button onClick={handleClick} className={styles.button} >Close Comments</button>
             {commentsToRender.map((comment) => {
                 return <Comment key={comment.data.id} comment={comment} setHideComments={setHideComments} />
         })}
-        </div>
+        </div>}
+        </>
+        
     )
 
 }

@@ -14,8 +14,8 @@ export function Post({post}) {
         if (post.data.num_comments === 0) {
             return null;
         }
-        dispatch(fetchCommentsData(post.data.permalink));
         setHideComments(false);
+        dispatch(fetchCommentsData(post.data.permalink)); 
     };
 
     return(
