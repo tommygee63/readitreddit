@@ -34,7 +34,7 @@ const subreddits = createSlice({
 });
 
 export const subredditsSelector = (state) => {
-    return state.subreddits.subreddits;
+    return state.subreddits;
 }
 
 export default subreddits.reducer;

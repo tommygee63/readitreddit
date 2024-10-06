@@ -7,6 +7,20 @@
     border-radius: 5px;
 }
 
+.loading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+    width: 90%;
+    background-color: white;
+    border: none;
+    margin: 1px 0;
+    height: 55px;
+    width: 165px;
+}
+
 @media only screen and (max-width: 800px) {
     .subreddits {
         width: 100%;
